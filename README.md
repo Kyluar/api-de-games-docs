@@ -43,6 +43,10 @@ possíveis causas podem ser:
 * token vazio;
 * token inválido.
 
+Retornos:
+* res.send('Token vazio.')
+* res.send('Token inválido.')
+
 
 
 
