@@ -34,7 +34,8 @@ O processo foi um sucesso e os dados serão retornados. Exemplo de resposta:
         "title": "CyberTech Warfare",
         "year": 2023,
         "price": 69.99
-    }
+    },
+    ...
 ]
 ```
 
