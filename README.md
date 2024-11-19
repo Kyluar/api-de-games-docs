@@ -2,6 +2,7 @@
 
 Esta api foi criada para aplicar os conceitos aprendidos no curso "Formação Node.js" ministrado por Victor Lima do "Guia do Programador".
 
+
 ## Endpoints
 
 ### GET /games
@@ -48,6 +49,56 @@ Retornos:
 * res.send('Token inválido.')
 
 
+### POST /auth
+Esse endpoint é responsável por realizar o processo de login de um usuário já cadastrado.
 
+#### Parâmetros
+email: email do usuário.
+password: senha do usuário.
 
+Ex.:
+```
+{
+    "email": "email@example.com",
+    "password": "P@ssWordExample123"
+}
+```
+
+#### Respostas
+
+##### OK | 200
+O token para autenticação foi gerado com sucesso.
+Ex.:
+```
+{
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MCwiZW1haWwiOiJhZG1pbiIsImlhdCI6MTczMjAzNDg0OCwiZXhwIjoxNzMyMTIxMjQ4fQ.9S8VeKcgO2rcsMJau4U0j5jzHDZY0svNY0PbkO110N0"
+}
+```
+
+##### Email não cadastrado no banco de dados | 404
+Esse erro ocorre quando o processo é incapaz de localizar o email passado por parâmetro no banco de dados. Ex.:
+
+```
+{
+    err: `O email "${email}" não foi encontrado.`
+}
+```
+
+##### Senha inválida | 400
+Esse erro ocorre quando a senha do usuário cadastrado no banco de dados difere com a senha passada por parâmetro. Ex.:
+
+```
+{
+    err: `Senha inválida.`
+}
+```
+
+##### Falha interna | 500
+Esse erro ocorre quando há uma falha interna do servidor. Ex.:
+
+```
+{
+    err: `Falha interna.`
+}
+```
 
