@@ -51,7 +51,7 @@ Retornos:
 
 
 ### POST /auth
-Esse endpoint é responsável por realizar o processo de login de um usuário já cadastrado.
+Esse endpoint é responsável por realizar o processo de login de um usuário já cadastrado, permitindo o acesso aos dados protegidos por autenticação.
 
 #### Parâmetros
 email: email do usuário.
@@ -68,7 +68,7 @@ Ex.:
 #### Respostas
 
 ##### OK | 200
-O token para autenticação foi gerado com sucesso.
+Retorna o token para autenticação dos endpoints.
 Ex.:
 ```
 {
